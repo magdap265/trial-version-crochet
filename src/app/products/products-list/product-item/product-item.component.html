@@ -1,0 +1,18 @@
+<a 
+    href="#" 
+    class="list-group-item clearfix col-12"
+    (click) = "onSelected(product)"
+    [routerLink]="['/product', 'detail', product.id]">
+    <span class="float-left mr-4">
+        <img 
+            src="{{product.imagePath}}"
+            alt="{{product.name}}"
+            class="img-responsive"
+            style="max-width: 150px; ">
+    </span>
+    <div 
+        class="flot-right"
+        style="max-width: 500px;">
+        <h4 class="list-group-item-heading">{{ product.name }}</h4>
+    </div>
+</a>

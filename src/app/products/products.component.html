@@ -1,0 +1,22 @@
+<div 
+    class="row products">
+        <div
+            class="col-6 float-left">
+            <app-products-list >
+                    <router-outlet></router-outlet>
+            </app-products-list>
+        </div>
+
+    <div 
+        class="col-md-5 float-rihgt">
+        <app-product-detail
+            *ngIf="selectedProduct; else detailText">
+            <router-outlet></router-outlet>
+        </app-product-detail>
+        <ng-template #detailText>
+            <p>Proszę wybrać produkt by wyświetliś szczegóły.</p>
+        </ng-template>
+    </div>
+
+</div>
+

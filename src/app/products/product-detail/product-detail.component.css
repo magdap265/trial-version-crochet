@@ -1,0 +1,12 @@
+.img-detail{
+    max-height: 300px; 
+    min-height: 200px; 
+    max-width: 400px; 
+    display: flex;
+    margin: auto;
+}
+
+.btn-detail{
+    font-weight: bold;
+    font-size: medium;
+}

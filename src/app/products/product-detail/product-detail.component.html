@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12">
+        <div>
+            <img 
+                src="{{ selectedProduct.imagePath }}" 
+                alt="{{ selectedProduct.name }}" 
+                class="img-responsive img-detail">
+        </div>
+    </div>
+    <div class="col-12">
+        <h1>{{ selectedProduct.name }}</h1>
+        <p class="list-group-item-text"> Rodzaj prduktu: {{ selectedProduct.productType}}</p>
+        <p class="list-group-item-text"> Grubość sznurka: {{ selectedProduct.ropeSize }}</p>
+        <p class="list-group-item-text"> Kolor: {{ selectedProduct.color }}</p>
+        <p class="list-group-item-text">{{ selectedProduct.description }}</p>
+        <div class="row d-flex justify-content-between">
+            <button
+                class="btn-detail btn btn-outline-info col-5 pull-sm-left"
+                [routerLink]="['/edit']">Edytuj</button>
+            <button 
+                class="btn-detail btn btn-outline-info col-5 pull-sm-right"
+                [routerLink]="['/patterns']">Przejdź do schematu</button>
+        </div>
+    </div>
+</div>
+
