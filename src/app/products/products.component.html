@@ -1,22 +1,16 @@
-<div 
-    class="row products">
-        <div
-            class="col-6 float-left">
-            <app-products-list >
-                    <router-outlet></router-outlet>
-            </app-products-list>
-        </div>
-
-    <div 
-        class="col-md-5 float-rihgt">
-        <app-product-detail
-            *ngIf="selectedProduct; else detailText">
-            <router-outlet></router-outlet>
-        </app-product-detail>
-        <ng-template #detailText>
-            <p>Proszę wybrać produkt by wyświetliś szczegóły.</p>
-        </ng-template>
+<div class="row products">
+    <div
+        class="col-md-5 float-left col-xs-12">
+        <app-products-list >
+                <router-outlet></router-outlet>
+        </app-products-list>
+        <button class="btn btn-block btn-success" [routerLink]="['/product', 'edit']">Dodaj nowy produkt</button>
     </div>
 
+    <div 
+        class="col-md-6 float-rihgt col-xs-12">
+        <app-product-detail
+        ></app-product-detail>
+    </div>
 </div>
 

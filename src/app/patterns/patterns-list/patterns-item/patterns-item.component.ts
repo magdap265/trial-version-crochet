@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import { ProductsService } from 'src/app/products.service';
 import { Product } from 'src/app/product.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-patterns-item',
@@ -10,13 +11,15 @@ import { Product } from 'src/app/product.model';
   styleUrls: ['./patterns-item.component.css']
 })
 export class PatternsItemComponent implements OnInit {
-  @Input() product;
-  // static get parameters() {
-  //   return [DomSanitizer];
-  // }
-  constructor( private productsService: ProductsService, private sanitizer: DomSanitizer) { }
+  @Input() product: Product;
+  selectedProduct: Product;
+  constructor( 
+    private productsService: ProductsService, 
+    private sanitizer: DomSanitizer,
+    private productsRouter: ActivatedRoute) { }
 
   ngOnInit() {
+    this.selectedProduct = this.productsService.selectedProduct;
   }
 
   sanitizeVideoPath(videoPath) {

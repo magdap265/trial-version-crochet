@@ -3,6 +3,7 @@
         <app-product-item
             *ngFor="let productItem of productsList"
             [product]="productItem">
+            <router-outlet></router-outlet>
         </app-product-item>
     </div>
 </div>

@@ -1,8 +1,7 @@
 <a 
     href="#" 
-    class="list-group-item clearfix col-12"
-    (click) = "onSelected(product)"
-    [routerLink]="['/product', 'detail', product.id]">
+    class="list-group-item clearfix col-12 item"
+    [routerLink]="['/product', product.id]">
     <span class="float-left mr-4">
         <img 
             src="{{product.imagePath}}"
@@ -13,6 +12,6 @@
     <div 
         class="flot-right"
         style="max-width: 500px;">
-        <h4 class="list-group-item-heading">{{ product.name }}</h4>
+        <h6 class="list-group-item-heading">{{ product.name }}</h6>
     </div>
 </a>

@@ -18,7 +18,6 @@ export class ProductsListComponent implements OnInit {
 
   ngDoCheck(){
     this.selectedProduct = this.productsService.selectedProduct;
-    // console.log(this.selectedProduct)
   }
 
 }

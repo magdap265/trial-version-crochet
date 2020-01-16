@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../product.model';
 import { ProductsService } from '../../../products.service';
 
@@ -9,7 +9,6 @@ import { ProductsService } from '../../../products.service';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
-  // selectedProduct: Product[];
  
   constructor( private productsSerice: ProductsService) { }
 
@@ -19,5 +18,4 @@ export class ProductItemComponent implements OnInit {
   onSelected(productWasSelected){
   this.productsSerice.onSelectedProduct(productWasSelected);
   }
-
 }

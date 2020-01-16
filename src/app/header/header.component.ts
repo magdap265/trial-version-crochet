@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HeaderComponent {
   // @Output() selectedElement = new EventEmitter<string>();
 
-  constructor( private productRouter: ActivatedRoute ) {}
+  constructor( private productsRouter: ActivatedRoute ) {}
 
   // onSelectedNav(navElement: string){
   //   this.selectedElement.emit(navElement);

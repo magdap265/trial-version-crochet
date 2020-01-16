@@ -12,17 +12,22 @@ export class ProductsService {
     new Product(2,'Świąteczny koszyk', 'koszyk', 'czerwony, zielony', 5, 'Dwukolorowy koszyk ozdobny w klimcie świątecznym.', 'https://6.allegroimg.com/original/0cfded/c41977634025803caab340a94046', 'https://www.youtube.com/watch?v=MAbONHNAE2Q')
   ]
   
-  selectedProduct: Product[];
+  selectedProduct: Product;
   editProduct = false;
 
   constructor() { }
 
-  onSelectedProduct(productWasSelected: Product[]){
+  onSelectedProduct(productWasSelected: Product){
     this.selectedProduct = productWasSelected;
   }
 
-  onEdit(){
-    this.editProduct = !this.editProduct;
-    console.log(this.editProduct);
+  onChangeProductData(id, productData){
+    this.productsList[id].name = productData.name;
+    this.productsList[id].productType = productData.productType;
+    this.productsList[id].ropeSize = productData.ropeSize;
+    this.productsList[id].color = productData.color;
+    this.productsList[id].description = productData.description;
   }
+
+  // nazwa_funkcji(this.selectedProduct["id"]], obiekt)
 }

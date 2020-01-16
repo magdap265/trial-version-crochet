@@ -1,25 +1,25 @@
 <div class="row">
     <img class="col-3" style="max-height: 200px;" src="{{ selectedProduct.imagePath }}" alt="Torebka ze ściągaczem">
-    <form  class="col-9">
+    <form  [formGroup]="productForm" class="col-9" (ngSubmit)="onSave(productForm.value)">
+
         <div class="form-group">
             <label for="name">Nazwa produktu</label>
-            <input class="form-control" type="text" id="name" value="{{selectedProduct.name}}">
+            <input class="form-control" type="text" id="name" formControlName="name" value="{{selectedProduct.name}}">
 
-            <label for="type">Rodzaj produktu</label>
-            <input class="form-control" type="text" id="type" value="{{selectedProduct.productType}}">
+            <label for="productType">Rodzaj produktu</label>
+            <input class="form-control" type="text" id="productType" formControlName="productType" value="{{selectedProduct.productType}}">
 
-            <label for="rSize">Grubość sznurka</label>
-            <input class="form-control" type="text" id="rSize" value="{{selectedProduct.ropeSize}}">
+            <label for="ropeSize">Grubość sznurka</label>
+            <input class="form-control" type="text" id="ropeSize" formControlName="ropeSize" value="{{selectedProduct.ropeSize}}">
 
             <label for="color">Kolor</label>
-            <input class="form-control" type="text" id="color" value="{{selectedProduct.color}}">
+            <input class="form-control" type="text" id="color" formControlName="color" value="{{selectedProduct.color}}">
 
-            <label for="desc">Opis</label>
-            <textarea class="form-control" id="desc" cols="20" rows="5">{{selectedProduct.description}}</textarea>
+            <label for="description">Opis</label>
+            <textarea class="form-control" id="description" formControlName="description" cols="20" rows="5" value="{{selectedProduct.description}}"></textarea>
             <button 
-                type="button" 
+                type="submit" 
                 class="btn btn-dark btn-lg"
-                (click) = "onSave()"
                 >Zapisz</button>
         </div>
     </form>
